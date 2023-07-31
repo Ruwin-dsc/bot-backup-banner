@@ -16,10 +16,10 @@ Ce bot est un remade du bot de https://discord.gg/backup
 - phpMyAdmin (voir étape instalation)
 
 ### **Étapes d'installation**
-1. Clone le repository : `git clone https://github.com/Ruwin-dsc/`
+1. Clone le repository : `https://github.com/Ruwin-dsc/bot-backup-banner.git`
 2. Installe les dépendances : `npm install`
 3. Utilise phpMyAdmin et met le fichier `backupbot.sql` dessus si tu n'as pas phpMyAdmin ou que tu ne sais pas l'utiliser je t'invite à te rendre dans le serveur https://discord.gg/cloudheaven et demander un hébergeur avec phpMyAdmin pour le backupbot C'EST TOTALEMENT GRATUIT !!! Toutefois si t'as d'autre problème je t'invite à te rendre dans le serveur https://discord.gg/xkebY6nsxk ou https://discord.gg/cloudheaven
-4. Configure ton fichier de configuration `backupbot.json` avec les informations nécessaires.
+4. Configure ton fichier de configuration `config.json` avec les informations nécessaires.
 5. Lance le bot : `node index.js`
 
 ### **Configuration du fichier `config.json`**
