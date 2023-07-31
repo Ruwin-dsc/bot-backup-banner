@@ -13,7 +13,7 @@
     "linkbot": "LA BAH TU METS LE LIEN DU BOT oe ça va servir à rien c juste pour le style", 
         "BDD": {
         "note": "si tu ne comprend pas ce qu'il faut faire je te coneille d'aller voir le readme du github ou rejoindre le support https://discord.gg/zcN3sB5KSv",
-        "host": "localhost ou lien vps",     
+        "host": "127.0.0.1 ou lien vps",     
         "user": "root ou user pma vps",
         "password": "OPTIONNEL SI VOUS ETES EN LOCALHOST SUPPRIMEZ CETTE LIGNE",
         "database": "botbackup",
