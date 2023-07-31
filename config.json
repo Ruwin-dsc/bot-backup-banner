@@ -16,7 +16,7 @@
         "host": "",     
         "user": "VOTRE USER",
         "password": "OPTIONNEL SI VOUS ETES EN LOCALHOST SUPPRIMEZ CETTE LIGNE",
-        "database": "VOTRE NOM DE DB",
+        "database": "botbackup",
         "charset": "utf8mb4"
     }
 
