@@ -15,7 +15,7 @@ exports.run = async (bot, message, args) => {
     if(message.channel.id !== config.channelIdForBackup) return message.reply(`:x: Vous devez utiliser cette commande dans ce salon: <#${config.channelIdForBackup}>`).then(m => setTimeout(() => { m.delete() }, 60000)) 
     if(args[0] == "list") {
         bot.db.query(`SELECT * FROM backup`, async(err, req) => {
-            if(req.length < 1) resolve("*Aucune banner*") 
+            if(req.length < 1) return message.reply("*Aucune banner*") 
             else {
             const reqs = req.map((r, count) => `**${count + 1} •**[${r.name}](${r.link})`)
             const pageSize = 20
