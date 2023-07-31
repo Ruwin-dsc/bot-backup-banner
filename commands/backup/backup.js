@@ -17,7 +17,7 @@ exports.run = async (bot, message, args) => {
         bot.db.query(`SELECT * FROM backup`, async(err, req) => {
             if(req.length < 1) resolve("*Aucune banner*") 
             else {
-            const reqs = req.map((r, count) => `${count + 1} [${r.name}](${r.link})`)
+            const reqs = req.map((r, count) => `**${count + 1} •**[${r.name}](${r.link})`)
             const pageSize = 20
             const pageCount = Math.ceil(req.length / pageSize)
             
