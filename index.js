@@ -37,25 +37,10 @@ bot.commands = new Collection();
 const config = require("./config")
 bot.config = config
 const commandHandler = require("./handlers/command.js")(bot);
-const anticrashHandler = require("./utils/anticrash");
+const anticrashHandler = require("./Utils/anticrash");
 anticrashHandler(bot);
 const eventdHandler = require("./handlers/event.js")(bot);
-const loadDatabase = require("./handlers/loadDatabase");
-const DataBase = require("./handlers/loginDatabase");
-DataBase.connectDatabase(bot)
+const DatabaseHandler = require('./handlers/database')(bot);
+bot.db = DatabaseHandler
 
-console.log(`
-██╗    ██╗██╗  ██╗██╗████████╗███████╗██╗  ██╗ █████╗ ██╗     ██╗     
-██║    ██║██║  ██║██║╚══██╔══╝██╔════╝██║  ██║██╔══██╗██║     ██║     
-██║ █╗ ██║███████║██║   ██║   █████╗  ███████║███████║██║     ██║     
-██║███╗██║██╔══██║██║   ██║   ██╔══╝  ██╔══██║██╔══██║██║     ██║     
-╚███╔███╔╝██║  ██║██║   ██║   ███████╗██║  ██║██║  ██║███████╗███████╗
- ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝
-                                                                      
-██╗  ██╗███████╗    ███████╗███╗   ██╗ ██████╗ ██╗███╗   ██╗███████╗  
-╚██╗██╔╝██╔════╝    ██╔════╝████╗  ██║██╔════╝ ██║████╗  ██║██╔════╝  
- ╚███╔╝ █████╗      █████╗  ██╔██╗ ██║██║  ███╗██║██╔██╗ ██║█████╗    
- ██╔██╗ ██╔══╝      ██╔══╝  ██║╚██╗██║██║   ██║██║██║╚██╗██║██╔══╝    
-██╔╝ ██╗██║         ███████╗██║ ╚████║╚██████╔╝██║██║ ╚████║███████╗  
-╚═╝  ╚═╝╚═╝         ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝ `)
 bot.login(config.token);

@@ -14,8 +14,8 @@ exports.run = async (bot, message, args) => {
 
     if(message.channel.id !== config.channelIdForBackup) return message.reply(`:x: Vous devez utiliser cette commande dans ce salon: <#${config.channelIdForBackup}>`).then(m => setTimeout(() => { m.delete() }, 60000)) 
     if(args[0] == "list") {
-        bot.db.query(`SELECT * FROM backup`, async(err, req) => {
-            if(req.length < 1) return message.reply("*Aucune banner*") 
+        const req = bot.db.prepare('SELECT * FROM backup').all();
+            if(req.length < 1) return message.reply("*Aucune backup*") 
             else {
             const reqs = req.map((r, count) => `**${count + 1} •**[${r.name}](${r.link})`)
             const pageSize = 20
@@ -82,19 +82,15 @@ exports.run = async (bot, message, args) => {
                 msg.edit({ components: [row] })
             })
         }
-            
-        })
     } else if(args[0]) {
-        bot.db.query(`SELECT * FROM backup WHERE name = "${args[0].toLowerCase()}"`, async (err, req) => {
-            if(req.length < 1) {
-                return message.reply(`:x: Je n'ai pas pu trouver ce modèle.`)
-            } else {
-                message.reply(`✅ Je vous ai envoyé le modèle en MP`)
-                message.author.send(`--> *Voici votre modèle*: ${req[0].link}`)
-            }
-        })
+        const row = bot.db.prepare('SELECT * FROM backup WHERE name = ?').get(args[0].toLowerCase())
+        if(!row) return message.reply(`:x: Je n'ai pas pu trouver ce modèle.`)
+        else {
+            message.reply(`✅ Je vous ai envoyé le modèle en MP`)
+            message.author.send(`--> *Voici votre modèle*: ${row.link}`)
+        }
     } else {
-        return
+        return message.reply('Veuillez préciser `list` ou le nom de la backup')
     }
 }
 

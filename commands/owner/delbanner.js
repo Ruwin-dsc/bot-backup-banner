@@ -10,10 +10,10 @@ exports.help = {
 }
 
 exports.run = async (bot, message, args) => {
-    if(!config.ownerId.includes(message.author.id)) return
+    if(!config.buyers.includes(message.author.id)) return
     if(!args) return message.reply(`:x: Veuillez indiquer un nom !`)
 
-    bot.db.query(`DELETE FROM banner WHERE name = "${args[0]}"`) 
+        bot.db.prepare('DELETE FROM banner WHERE name = ?').run(args[0]); 
 
     message.reply(`La banner avec le nom ${args[0]} a bien été supprimer !`)
 

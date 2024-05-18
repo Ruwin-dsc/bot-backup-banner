@@ -14,7 +14,7 @@ exports.run = async (bot, message, args) => {
 
     if(message.channel.id !== config.channelIdForbanner) return message.reply(`:x: Vous devez utiliser cette commande dans ce salon: <#${config.channelIdForbanner}>`).then(m => setTimeout(() => { m.delete() }, 60000)) 
     if(args[0] == "list") {
-        bot.db.query(`SELECT * FROM banner`, async(err, req) => {
+        const req = bot.db.prepare('SELECT * FROM banner').all();
             if(req.length < 1) return message.reply("*Aucune banner*") 
             else {
             const reqs = req.map((r, count) => `**${count + 1} •**[${r.name}](${r.link})`)
@@ -82,19 +82,15 @@ exports.run = async (bot, message, args) => {
                 msg.edit({ components: [row] })
             })
         }
-            
-        })
     } else if(args[0]) {
-        bot.db.query(`SELECT * FROM banner WHERE name = "${args[0].toLowerCase()}"`, async (err, req) => {
-            if(req.length < 1) {
-                return message.reply(`:x: Je n'ai pas pu trouver ce modèle.`)
-            } else {
-                message.reply(`✅ Je vous ai envoyé le modèle en MP`)
-                message.author.send(`--> *Voici votre modèle*: ${req[0].link}`)
-            }
-        })
+        const row = bot.db.prepare('SELECT * FROM banner WHERE name = ?').get(args[0].toLowerCase())
+        if(!row) return message.reply(`:x: Je n'ai pas pu trouver ce modèle.`)
+        else {
+            message.reply(`✅ Je vous ai envoyé le modèle en MP`)
+            message.author.send(`--> *Voici votre modèle*: ${row.link}`)
+    }
     } else {
-        return
+        return message.reply('Veuillez préciser `list` ou le nom de la banner')
     }
 }
 
