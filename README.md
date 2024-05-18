@@ -1,61 +1,41 @@
+<h1 align="center">
+ 📁 〢 Bot Backup-banner
+</h1>
 
-# :robot: **Bot de /backup by ruwinou & xifi_yt & biggy**
+---
+## <a id="menu"></a>🍃 〢 Menu
 
-## :pencil: **Description**
-Un bot capable de gérer les backups et les bannières de différents serveur ! 
-Ce bot est un remade du bot de https://discord.gg/backup
+- [📩・Deploy With](#deploys)
+- [⚙️・Setting up](#setup)
+- [💼・Term](#terms)
+- [🕵️‍♂️・Authors](#authors)
+- [🪄・Discord](https://discord.gg/uhq)
 
-## :gear: **Fonctionnalités**
-- système d'ajout de backup et de bannière
+## <a id="deploys"></a>📩 〢 Deploys
+[![Deploy](https://raw.githubusercontent.com/Ruwin-dsc/deploy-buttons/main/buttons/remade/replit.svg)](https://replit.com/github/Ruwin-dsc/bot-backup-banner)
 
-## :wrench: **Configuration**
+[![Deploy](https://raw.githubusercontent.com/Ruwin-dsc/deploy-buttons/main/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/Ruwin-dsc/bot-backup-banner)
 
-### **Prérequis**
-- Discord.js (version 14.11.0)
-- mysql (version 2.18.1)
-- phpMyAdmin (voir étape instalation)
+[![Deploy](https://raw.githubusercontent.com/Ruwin-dsc/deploy-buttons/main/buttons/remade/heroku.svg)](https://heroku.com/deploy/?template=https://github.com/Ruwin-dsc/bot-backup-banner)
 
-### **Étapes d'installation**
-1. Clone le repository : `https://github.com/Ruwin-dsc/bot-backup-banner.git`
-2. Installe les dépendances : `npm install`
-3. Utilise phpMyAdmin et met le fichier `backupbot.sql` dessus si tu n'as pas phpMyAdmin ou que tu ne sais pas l'utiliser je t'invite à te rendre dans le serveur https://discord.gg/cloudheaven et demander un hébergeur avec phpMyAdmin pour le backupbot C'EST TOTALEMENT GRATUIT !!! Toutefois si t'as d'autre problème je t'invite à te rendre dans le serveur https://discord.gg/xkebY6nsxk ou https://discord.gg/cloudheaven
-4. Configure ton fichier de configuration `config.json` avec les informations nécessaires.
-5. Lance le bot : `node index.js`
+[![Deploy](https://raw.githubusercontent.com/Ruwin-dsc/deploy-buttons/main/buttons/remade/railway.svg)](https://railway.app/new/template?template=https://github.com/Ruwin-dsc/bot-backup-banner)
 
-### **Configuration du fichier `config.json`**
-```json
-{
-    "token": "VOTRE TOKEN",
-    "ownerId": ["7VOTRE ID"],
-    "prefix": "VOTRE PREFIX", 
-    "channelIdForBackup": "ID DE SALON POUR VOS BACKUP",
-    "channelIdForbanner": "ID DE SALON POUR VOS BANNIERES",
-    "clients": {
-        "name": "Backup Remade by ruwinou & xifi_yt & biggy",
-        "logo": "https://images-ext-1.discordapp.net/external/PidUutTGrD3gOXhulBlt7u759MFBv81KZqZuH9R3A9U/https/cdn.discordapp.com/avatars/1132275253435957300/9482cad30d38e82ca37bc8a99f25c6b8.webp?width=281&height=281",
-        "embedColor": "White"
-    },
+## <a id="setup"></a> 📁 〢 Setting up
 
-    "linkbot": "LA BAH TU METS LE LIEN DU BOT oe ça va servir à rien c juste pour le style", 
-        "BDD": {
-        "note": "si tu ne comprend pas ce qu'il faut faire je te coneille d'aller voir le readme du github ou rejoindre le support https://discord.gg/zcN3sB5KSv",
-        "host": "",     
-        "user": "VOTRE USER",
-        "password": "OPTIONNEL SI VOUS ETES EN LOCALHOST SUPPRIMEZ CETTE LIGNE",
-        "database": "VOTRE NOM DE DB",
-        "charset": "utf8mb4"
-    }
+1. Install [NodeJS](https://nodejs.org/)
+2. Install [Files](https://github.com/Ruwin-dsc/bot-backup-banner/archive/refs/heads/main.zip)
+3. Complete the configuration
+5. Enjoy the tool
 
-}
-```
+### <a id="terms"></a>💼 〢 Terms Of Usage
 
-## :raised_hands: **Contribution**
-Si tu souhaites contribuer à ce projet, n'hésite pas à ouvrir une pull request !
+- [x] Educational purpose only.
+- [x] You can use the source code if you keep credits (in embed + in markdown), it has to be open-source.
+- [x] We are NOT responsible of anything you do with our software (if its illegal).
 
-## :page_facing_up: **License**
-Ce projet est sous license Apache. Voir le fichier `LICENSE` pour plus d'informations.
+### <a id="authors"></a>🕵️‍♂️ 〢 Authors
+- [Ruwin](https://github.com/Ruwin-dsc)
+- Biggy
+- Xifi
 
-## **Support**
-Serveur Discord: https://discord.gg/xkebY6nsxk & https://discord.gg/cloudheaven
-Message Privé: ruwinou ou biggy ou xifi_yt
-
+---
