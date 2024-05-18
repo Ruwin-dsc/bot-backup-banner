@@ -34,7 +34,7 @@
 - [x] We are NOT responsible of anything you do with our software (if its illegal).
 
 ### <a id="authors"></a>🕵️‍♂️ 〢 Authors
-- [Ruwin](https://github.com/Ruwin-dsc)
+- [ruwinou](https://github.com/Ruwin-dsc)
 - Biggy
 - Xifi
 
